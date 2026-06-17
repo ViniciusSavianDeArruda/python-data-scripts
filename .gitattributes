@@ -1,3 +1,2 @@
 *.csv filter=lfs diff=lfs merge=lfs -text
-*.ipynb linguist-language=Python
-*.ipynb linguist-detectable=true
+*.ipynb linguist-detectable=false
