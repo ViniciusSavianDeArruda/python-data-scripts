@@ -1,130 +1,53 @@
-# Curso Python
+# Python Data Scripts
 
-Este repositório contém os projetos e exercícios do curso de Python.
+Repositório de estudos com scripts Python desenvolvidos durante o curso **Jornada Python (Hashtag Treinamentos)**, cobrindo automação, análise de dados e desenvolvimento web.
 
-## 📁 Estrutura do Projeto
+## 📁 Projetos
 
-### Aula 1 - Automação de Tarefas
-- **aula.py**: Script de automação para cadastro de produtos usando PyAutoGUI
-- **produtos.csv**: Base de dados dos produtos para cadastro
-- **auxiliar.py**: Funções auxiliares para automação
-- **ResumoAula1.md**: Resumo dos conceitos aprendidos
+### 🤖 [01 — Automação de Cadastro](./01-automacao-cadastro)
+Script de automação com **PyAutoGUI** para cadastro em massa de produtos em sistema web, lendo dados de arquivo CSV.
 
-### Aula 2 - Análise de Dados
-- **inicial.ipynb**: Notebook Jupyter com análise de cancelamentos de clientes
-- **cancelamentos.csv**: Dataset completo com ~881k registros (58MB) - gerenciado via Git LFS
-- **cancelamentos_sample.csv**: Amostra menor do dataset para testes
-- **Resumo-Aula2.md**: Resumo dos conceitos e comandos da análise de dados
+**Stack:** Python · PyAutoGUI · Pandas
 
-### Aula 3 - Inteligência Artificial e Previsões
-- **inicial.ipynb**: Notebook com desenvolvimento de modelo de Machine Learning
-- **clientes.csv**: Dataset com 100k clientes para análise de score de crédito
-- **novos_clientes.csv**: Dados de novos clientes para fazer previsões
-- **Resumo-Aula3.md**: Resumo completo dos conceitos de IA e Machine Learning
+### 📊 [02 — Análise de Dados](./02-analise-dados)
+Análise exploratória de base com ~881 mil registros de cancelamentos de clientes, identificando padrões e fatores associados ao churn.
 
-### Aula 4 - Desenvolvimento Web ✨
-- **projeto1-chatbot-ia/**: ChatBot inteligente com Streamlit + OpenAI
-  - `main.py`: ChatBot com IA real (GPT-4)
-  - `demo.py`: Versão demonstrativa (sem API key)
-  - `auxiliar.py`: Funções auxiliares
-  - `requirements.txt`: Dependências automatizadas
-- **projeto2-chat-web/**: Chat em tempo real com Flask + Socket.IO
-  - `main.py`: Servidor web com WebSockets
-  - `templates/index.html`: Interface do chat
-  - `requirements.txt`: Dependências do Flask
+**Stack:** Python · Pandas · Plotly · Jupyter
 
-## 📊 Sobre os Datasets
+### 🌐 [03 — Desenvolvimento Web](./03-web)
+Projetos web com integração de IA (ChatBot com OpenAI + Streamlit) e comunicação em tempo real (Chat com Flask + WebSockets).
 
-### Arquivos CSV Grandes
-Os arquivos `cancelamentos.csv` e outros CSVs grandes são gerenciados pelo **Git LFS** (Large File Storage) para otimizar o repositório.
+**Stack:** Python · Streamlit · Flask · OpenAI API · WebSockets
 
-- **cancelamentos.csv**: Dataset completo (881.666 linhas, 58MB)
-- **cancelamentos_github.csv**: Amostra de 1000 linhas para visualização fácil no GitHub
+## 🚀 Como usar
 
-### Visualização dos Dados
-- Para ver os dados no GitHub: use o arquivo `cancelamentos_github.csv`
-- Para análises completas: clone o repositório e use `cancelamentos.csv`
-- Para gráficos interativos: abra o notebook `inicial.ipynb`
+Cada projeto é independente e possui seu próprio `README.md` com instruções específicas:
 
-## 🛠️ Tecnologias Utilizadas
+```bash
+cd 01-automacao-cadastro       # ou 02-analise-dados, 03-web
+pip install -r requirements.txt
+```
+
+## 🛠️ Tecnologias gerais
+
 - **Python 3.12**
-- **Pandas**: Manipulação de dados
-- **Plotly**: Visualizações interativas
-- **PyAutoGUI**: Automação de interface
-- **Scikit-learn**: Machine Learning e Inteligência Artificial
-- **Jupyter Notebook**: Análise interativa e desenvolvimento de IA
-- **Git LFS**: Gerenciamento de arquivos grandes
-- **Streamlit**: Framework web para aplicações Python
-- **Flask**: Micro-framework web com Socket.IO
-- **OpenAI API**: Integração com GPT-4 para IA conversacional
-- **WebSockets**: Comunicação em tempo real
+- **Análise de dados:** Pandas, Plotly, Jupyter Notebook
+- **Automação:** PyAutoGUI
+- **Web:** Streamlit, Flask, Flask-SocketIO
+- **Integrações:** OpenAI API
 
-## 🚀 Como Usar
+## 🔧 Refatorações e melhorias
 
-1. Clone o repositório:
-```bash
-git clone https://github.com/ViniciusSavianDeArruda/Curso-Python.git
-cd Curso-Python
-```
+O código original dos projetos foi **refatorado e aprimorado por conta** ao longo do estudo, com as seguintes melhorias:
 
-2. Instale as dependências:
-```bash
-pip install pandas plotly pyautogui jupyter scikit-learn
-```
+- **Reorganização em estrutura modular** — separação em pastas `src/` e `data/` para melhor organização e legibilidade
+- **Uso de variáveis de ambiente** — chaves de API (como OpenAI) removidas do código-fonte e movidas para `os.getenv()`, seguindo boas práticas de segurança
+- **Versão demonstrativa** — criação de arquivos `demo.py` para permitir testes sem consumo de APIs pagas
+- **Documentação profissional** — READMEs reescritos com foco em objetivo, uso e execução dos projetos
+- **Nomes padronizados** — renomeação de arquivos (ex: `auxiliar.py` → `helpers.py`) seguindo convenções mais claras
+- **Git LFS** — arquivos CSV grandes versionados via Git Large File Storage
+- **Limpeza dos notebooks** — remoção das saídas dos notebooks Jupyter para reduzir tamanho e melhorar apresentação no GitHub
 
-3. Para baixar os arquivos grandes do Git LFS:
-```bash
-git lfs pull
-```
+## 📚 Contexto
 
-4. Execute os scripts ou abra os notebooks conforme necessário.
-
-## 🎯 Projetos Desenvolvidos
-
-### 🤖 Aula 1: Automação de Processos
-- Cadastro automático de produtos em sistemas web
-- Automação de interface gráfica com PyAutoGUI
-
-### 📊 Aula 2: Análise de Dados  
-- Análise de cancelamentos de clientes
-- Visualizações interativas com gráficos Plotly
-- Identificação de padrões e insights nos dados
-
-### 🧠 Aula 3: Inteligência Artificial
-- Desenvolvimento de modelo de Machine Learning
-- Previsão de Score de Crédito (Bom, OK, Ruim)
-- Algoritmos: Random Forest e K-Nearest Neighbors
-- Acurácia de modelos e aplicação em novos dados
-
-### 🌐 Aula 4: Desenvolvimento Web
-- **ChatBot IA**: Interface conversacional com GPT-4
-- **Chat em Tempo Real**: WebSockets para comunicação instantânea
-- **Streamlit**: Apps web interativas sem JavaScript
-- **Flask + Socket.IO**: Servidor web com comunicação bidirecional
-
-## 🚀 Como Executar os Projetos Web
-
-### ChatBot Demonstração (sem API key)
-```bash
-cd "aula4-Desenvolvimento Web/projeto1-chatbot-ia"
-streamlit run demo.py --server.port 8501
-# Acesse: http://localhost:8501
-```
-
-### Chat Web em Tempo Real
-```bash
-cd "aula4-Desenvolvimento Web/projeto2-chat-web"
-python main.py
-# Acesse: http://localhost:5000
-```
-
-## 📱 Projetos Ativos
-
-| 🎯 Projeto | 🌐 URL | ⚡ Status | 💻 Comando |
-|------------|---------|-----------|------------|
-| **ChatBot Demo** | `localhost:8501` | 🟢 Pronto | `streamlit run demo.py` |
-| **Chat Web** | `localhost:5000` | 🟢 Pronto | `python main.py` |
-| **IA Real** | `localhost:8501` | 🟡 API Key | `streamlit run main.py` |
-
----
-*Curso de Python - Automação, Análise de Dados, IA e Desenvolvimento Web* 🐍📈🤖🌐
+Repositório de estudos práticos em Python, desenvolvido a partir dos fundamentos aprendidos no curso Jornada Python (Hashtag Treinamentos) e adaptado com melhorias próprias de organização, segurança e documentação.
